@@ -186,9 +186,14 @@ const Dashboard = ({ children }) => {
             )}
           </button>
 
-          <div className="flex items-center space-x-4">
-            <FaChartLine className="text-blue-600 text-xl" />
-            <h1 className="text-xl font-semibold text-gray-800">Admin Dashboard</h1>
+          <div className='flex items-center justify-between w-full'>
+            <div className="flex items-center space-x-4">
+              <FaChartLine className="text-blue-600 text-xl" />
+              <h1 className="text-xl font-semibold text-gray-800">Admin Dashboard</h1>
+            </div>
+            <div className='flex items-center gap-2 cursor-pointer' onClick={() => navigate('/dashboard/profile')}>
+              <FaUser className="text-blue-600 text-xl" /><span className='text-gray-700 font-bold'>Admin</span>
+            </div>
           </div>
         </header>
 
