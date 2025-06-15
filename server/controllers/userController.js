@@ -25,16 +25,26 @@ exports.createUser = (req, res) => {
     role
   } = req.body;
 
-  // Check if username already exists
-  const checkSql = 'SELECT * FROM users WHERE username = ?';
-  db.query(checkSql, [username], (checkErr, checkResult) => {
+  // Check if username or E_ID already exists
+  const checkSql = 'SELECT * FROM users WHERE username = ? OR E_ID = ?';
+  db.query(checkSql, [username, eid], (checkErr, checkResult) => {
     if (checkErr) {
       console.error(checkErr);
-      return res.status(500).send({ status: 'error', message: 'Database error during username check' });
+      return res.status(500).send({ status: 'error', message: 'Database error during uniqueness check' });
     }
 
     if (checkResult.length > 0) {
-      return res.status(400).send({ status: 'error', message: 'Username already exists' });
+      const duplicateFields = checkResult.map(user => {
+        let fields = [];
+        if (user.username === username) fields.push('username');
+        if (user.E_ID === eid) fields.push('E_ID');
+        return fields;
+      }).flat();
+
+      return res.status(400).send({
+        status: 'error',
+        message: `The following already exist: ${[...new Set(duplicateFields)].join(', ')}`
+      });
     }
 
     // Insert the new user
@@ -66,6 +76,8 @@ exports.createUser = (req, res) => {
     });
   });
 };
+
+
 
 exports.getUserById = (req, res) => {
   const { id } = req.params;

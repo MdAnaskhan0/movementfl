@@ -197,8 +197,7 @@ const Dashboard = ({ children }) => {
           {children || (
             <>
               <div className="mb-8">
-                <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-2">Welcome back, Admin!</h2>
-                <p className="text-gray-600">Here's what's happening with your system today.</p>
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-2">Welcome Admin! 👋</h2>
               </div>
 
               {isLoading ? (
