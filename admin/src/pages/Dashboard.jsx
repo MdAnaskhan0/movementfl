@@ -189,11 +189,12 @@ const Dashboard = ({ children }) => {
           <div className='flex items-center justify-between w-full'>
             <div className="flex items-center space-x-4">
               <FaChartLine className="text-blue-600 text-xl" />
-              <h1 className="text-xl font-semibold text-gray-800">Admin Dashboard</h1>
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-2">Welcome! 👋</h2>
             </div>
-            <div className='flex items-center gap-2 cursor-pointer' onClick={() => navigate('/dashboard/profile')}>
-              <FaUser className="text-blue-600 text-xl" /><span className='text-gray-700 font-bold'>Admin</span>
+            <div className="p-3 bg-blue-100 rounded-full cursor-pointer" onClick={() => navigate('/dashboard/profile')}>
+              <FaUser className="text-blue-600 text-xl" />
             </div>
+
           </div>
         </header>
 
@@ -201,10 +202,6 @@ const Dashboard = ({ children }) => {
         <main className="flex-grow overflow-auto p-6">
           {children || (
             <>
-              <div className="mb-8">
-                <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-2">Welcome Admin! 👋</h2>
-              </div>
-
               {isLoading ? (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {[...Array(6)].map((_, i) => (

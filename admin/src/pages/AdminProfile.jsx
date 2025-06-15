@@ -97,16 +97,7 @@ const AdminProfile = ({ children }) => {
               <div className="p-2 bg-blue-100 rounded-lg">
                 <MdOutlineSecurity className="text-blue-600 text-xl" />
               </div>
-              <h1 className="text-xl font-semibold text-gray-800">Admin Profile</h1>
-            </div>
-            <div
-              className="flex items-center gap-2 cursor-pointer group"
-              onClick={() => navigate('/dashboard/profile')}
-            >
-              <div className="p-2 bg-blue-100 rounded-full group-hover:bg-blue-200 transition-colors duration-200">
-                <FaUser className="text-blue-600 text-lg" />
-              </div>
-              <span className="text-gray-700 font-medium hidden md:inline">Admin</span>
+              <h1 className="text-xl font-semibold text-gray-800">Super Admin Profile</h1>
             </div>
           </div>
         </header>
@@ -121,8 +112,7 @@ const AdminProfile = ({ children }) => {
                     <FaUser className="text-blue-600 text-2xl" />
                   </div>
                   <div>
-                    <h2 className="text-xl font-bold text-gray-800">Admin Account</h2>
-                    <p className="text-gray-600">Administrator privileges</p>
+                    <h2 className="text-xl font-bold text-gray-800">Super Admin Account</h2>
                   </div>
                 </div>
               </div>
