@@ -18,6 +18,7 @@ import Departments from '../pages/roles/admin/Settings/Departments';
 import Branchs from '../pages/roles/admin/Settings/Branchs';
 import Designations from '../pages/roles/admin/Settings/Designations';
 import VisitingStatus from '../pages/roles/admin/Settings/VisitingStatus';
+import CreateTeam from '../pages/roles/admin/Teams/CreateTeam';
 import Teams from '../pages/roles/admin/Teams/Teams';
 import TeamDetails from '../pages/roles/admin/Teams/TeamDetails';
 import Companies from '../pages/roles/admin/Settings/Companies';
@@ -66,6 +67,7 @@ export default function AppRoutes() {
                       <Route path="/admin/branchs" element={<Branchs />} />
                       <Route path="/admin/designations" element={<Designations />} />
                       <Route path="/admin/visitingstatus" element={<VisitingStatus />} />
+                      <Route path="/admin/teams/create-team" element={<CreateTeam />} />
                       <Route path="/admin/teams" element={<Teams />} />
                       <Route path="/team/:teamID" element={<TeamDetails />} />
                       <Route path="/admin/companynames" element={<Companies />} />
