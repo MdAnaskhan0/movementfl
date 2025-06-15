@@ -12,20 +12,20 @@ export default function Header() {
 
     return (
         <div className="bg-gray-100 py-2 px-6 shadow-md">
-            <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
+            <div className="flex md:flex-col items-center justify-between space-y-4 md:space-y-0">
 
                 {/* Logo */}
-                <div className="w-full md:w-1/2 flex justify-center md:justify-start items-center cursor-pointer">
+                <div className="w-1/4 md:w-1/2 md:justify-start items-center cursor-pointer mt-2 md:mt-0">
                     <img
                         src={logo}
                         alt="Logo"
-                        className="w-40 md:w-48 items-center p-4"
+                        className="w-40 md:w-48 items-center px-4 md:p-4"
                         onClick={handleLogoClick}
                     />
                 </div>
 
                 {/* Management System */}
-                <div className="w-full md:w-1/2 text-center md:text-right">
+                <div className="w-3/4 md:w-1/2 text-center md:text-right">
                     <h1 className="text-sm md:text-3xl font-bold text-gray-800">
                         Employee Movement Management System
                     </h1>
