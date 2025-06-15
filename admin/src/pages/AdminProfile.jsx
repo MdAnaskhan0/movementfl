@@ -22,17 +22,17 @@ const AdminProfile = ({ children }) => {
 
   const handleChangePassword = async () => {
     if (!oldPassword || !newPassword || !confirmNewPassword) {
-      toast.error('Please fill in all fields', { position: 'top-center' });
+      toast.error('Please fill in all fields', { position: 'top-right' });
       return;
     }
 
     if (newPassword !== confirmNewPassword) {
-      toast.error('New passwords do not match', { position: 'top-center' });
+      toast.error('New passwords do not match', { position: 'top-right' });
       return;
     }
 
     if (newPassword.length < 8) {
-      toast.error('Password must be at least 8 characters', { position: 'top-center' });
+      toast.error('Password must be at least 8 characters', { position: 'top-right' });
       return;
     }
 
@@ -59,14 +59,21 @@ const AdminProfile = ({ children }) => {
     }
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem('adminLoggedIn');
+    localStorage.removeItem('adminUsername');
+    navigate('/');
+  };
+
   return (
     <div className="flex h-screen bg-gray-50">
       <ToastContainer autoClose={3000} hideProgressBar={true} />
-      
+
       {/* Sidebar for desktop and mobile */}
       <Sidebar
         sidebarOpen={sidebarOpen}
         setSidebarOpen={setSidebarOpen}
+        handleLogout={handleLogout}
         className="fixed md:relative z-20"
       />
 
@@ -207,9 +214,8 @@ const AdminProfile = ({ children }) => {
                   <button
                     onClick={handleChangePassword}
                     disabled={loading}
-                    className={`w-full flex justify-center items-center py-3 px-4 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-all ${
-                      loading ? 'opacity-80 cursor-not-allowed' : 'hover:shadow-md'
-                    }`}
+                    className={`w-full flex justify-center items-center py-3 px-4 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-all ${loading ? 'opacity-80 cursor-not-allowed' : 'hover:shadow-md'
+                      }`}
                   >
                     {loading ? (
                       <>
