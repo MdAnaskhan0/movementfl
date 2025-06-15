@@ -28,7 +28,7 @@ const Unauthorized = () => {
         </button>
         
         <div className="mt-6 text-sm text-gray-500">
-          <p>Need help? <a href="mailto:support@example.com" className="text-blue-600 hover:underline">Contact support</a></p>
+          <p>Need help? <a href="anas.cse.201@gmail.com" className="text-blue-600 hover:underline">Contact support</a></p>
         </div>
       </div>
     </div>
